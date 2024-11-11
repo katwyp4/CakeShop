@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Logowanie / Rejestracja</title>
+    <link href="/_modules/login/log.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-toggle">
+            <button id="show-login" class="active">Login</button>
+            <button id="show-register">Register</button>
+        </div>
+
+        <div class="auth-form" id="login-form-container"> 
+            <h3>Login</h3>
+            <form action="log.php" method="post" id="login-form"> 
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit" class="btn btn-primary">Zaloguj się</button>
+            </form>
+        </div>
+        
+        <div class="auth-form" id="register-form" style="display: none;">
+            <h3>Register</h3>
+            <form action="log.php" method="post">
+                <label for="register-name">Imię:</label>
+                <input type="text" id="register-name" name="name" required> 
+                
+                <label for="register-last-name">Nazwisko:</label>
+                <input type="text" id="register-last-name" name="last_name" required> 
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" name="email" required>
+                
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="password" required>
+                
+                <label for="register-confirm-password">Confirm Password:</label>
+                <input type="password" id="register-confirm-password" name="confirm-password" required>
+                
+                <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/_modules/login/log.js"></script>
+</body>
+</html>
