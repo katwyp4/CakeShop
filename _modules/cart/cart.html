@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Koszyk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/_modules/cart/cart.css">
+    <link rel="stylesheet" href="/_modules/home/home.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i> info@example.com
+        </div>
+        <div class="logo">
+            <h1><i class="fa fa-birthday-cake"></i> CakeShop</h1>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-phone-alt"></i> +012 345 6789
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Strona główna</a>
+        <div class="navbar-links">
+            <a href="/#cake-configuration" class="nav-item">Konfiguracja tortu</a>
+            <a href="/about.html" class="nav-item">Polecane torty</a>
+            <a href="/#testimonials" class="nav-item">Opinie o nas</a>
+            <a href="/_modules/cart/cart.html" class="nav-item">Koszyk</a>
+            <a href="/_modules/login/log.html" class="nav-item">Logowanie/Rejestracja</a>
+            <a href="/contact.html" class="nav-item">Contact Us</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Mój koszyk</h1>
+    </header>
+    <main>
+        <div id="cart-items">
+            <!-- Torty konfigurowane -->
+        </div>
+        <div id="ready-cakes-items">
+            <!-- Torty gotowe -->
+        </div>
+        <div id="cart-total">
+            <h2>Łączna suma: <span id="total-price">0 zł</span></h2>
+        </div>
+        <button id="add-new-cake" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Dodaj kolejny tort</button>
+        <button id="checkout-button" style="background-color: darkgreen; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Składam zamówienie</button>
+    </main>
+    <script src="/_modules/cart/cart.js"></script>
+</body>
+</html>

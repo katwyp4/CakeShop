@@ -13,11 +13,16 @@ body {
 }
 
 .topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #333;
     color: white;
+    z-index: 1000; 
+    
 }
 
 .contact-info {
@@ -31,23 +36,44 @@ body {
 
 
 .navbar {
+    position: fixed;
+    top: 60px; /* Umieszczamy navbar poniżej topbar o jego wysokość (np. 40px) */
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background-color: #444;
     color: white;
+    z-index: 900; /* Ustaw wyższy z-index niż zawartość strony, ale niższy niż topbar */
+}
+.cart-count {
+    background-color: #ff0000;      /* Czerwone tło dla wyróżnienia */
+    color: white;                   /* Biały kolor tekstu */
+    border-radius: 90%;             /* Zaokrąglony kształt */
+    padding: 2px 6px;               /* Padding dla zwiększenia widoczności */
+    font-size: 0.8rem;              /* Rozmiar czcionki */
+    font-weight: bold;              /* Pogrubienie dla lepszej widoczności */
+    position: absolute;
+    top: 0px;                      /* Dostosuj, aby licznik był obok napisu "Koszyk" */
+    right: -20px;                   /* Dostosuj, aby licznik był w rogu napisu */
+    z-index: 1000;                  /* Z-index dla widoczności ponad innymi elementami */
+}
+
+.navbar-brand{
+    color: #4caf50;
 }
 
 .navbar-links {
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
 .nav-item {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
 }
 
 
@@ -82,12 +108,45 @@ body {
     flex-wrap: wrap;
 }
 
-.about-item, .menu-item, .team-member {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
+.configuration-step {
+    margin: 20px auto;
     text-align: center;
-    width: 200px;
+    max-width: 600px;
+}
+
+.configuration-step.hidden {
+    display: none;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    transition: 0.3s;
+}
+
+.menu-item button {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #45a049;
 }
 
 .offer-section {
@@ -97,6 +156,7 @@ body {
 
 .offer-section .btn {
     margin-top: 10px;
+    color: #45a049;
 }
 
 
@@ -185,3 +245,15 @@ footer {
     object-fit: cover; 
     border-radius: 8px; 
 }
+.alert {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+

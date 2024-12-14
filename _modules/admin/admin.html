@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina</title>
+    <link rel="stylesheet" href="/_modules/admin/admin.css">
+
+</head>
+<body>
+    <h1>Panel Administracyjny</h1>
+    <nav>
+        <a href="#" class="nav-link" data-section="users">Użytkownicy</a>
+        <a href="#" class="nav-link" data-section="cakes">Gotowe Torty</a>
+        <a href="#" class="nav-link" data-section="configured-cakes">Skonfigurowane Torty</a>
+        <a href="#" class="nav-link" data-section="orders">Zamówienia</a>
+    </nav>
+
+    <div id="notifications" style="position: fixed; top: 10px; right: 10px; z-index: 1000;"></div>
+
+
+    <div id="users" class="section">
+        <h2>Użytkownicy</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Email</th>
+                    <th>Administrator</th>
+                </tr>
+            </thead>
+            <tbody id="user-list"></tbody>
+        </table>
+    </div>
+
+    <div id="cakes" class="section">
+        <h2>Gotowe Torty</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa</th>
+                    <th>Opis</th>
+                    <th>Cena</th>
+                    <th>Zdjęcie</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody id="cake-list"></tbody>
+        </table>
+        <h3>Dodaj nowy tort</h3>
+<form id="add-cake-form">
+    <label for="cake-name">Nazwa tortu:</label>
+    <input type="text" id="cake-name" required>
+    <br>
+    <label for="cake-description">Opis tortu:</label>
+    <textarea id="cake-description" required></textarea>
+    <br>
+    <label for="cake-price">Cena:</label>
+    <input type="number" id="cake-price" step="0.01" required>
+    <br>
+    <label for="cake-image">URL zdjęcia:</label>
+<input type="text" id="cake-image" required>
+
+            <br>
+    <button type="submit">Dodaj tort</button>
+</form>
+
+    </div>
+
+    <div id="configured-cakes" class="section">
+        <h2>Skonfigurowane Torty</h2>
+    
+        <!-- Tabela dla rozmiarów -->
+        <h3>Rozmiary</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="rozmiar-list">
+                <!-- Wypełnione dynamicznie przez JavaScript -->
+            </tbody>
+        </table>
+    
+        <!-- Tabela dla smaków -->
+        <h3>Smaki</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="smak-list">
+                <!-- Wypełnione dynamicznie przez JavaScript -->
+            </tbody>
+        </table>
+    
+        <!-- Tabela dla dodatków -->
+        <h3>Dodatki</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="dodatek-list">
+                <!-- Wypełnione dynamicznie przez JavaScript -->
+            </tbody>
+        </table>
+    
+        <h3>Dodaj nowy składnik</h3>
+        <form id="add-ingredient-form">
+            <label for="ingredient-name">Nazwa składnika:</label>
+            <input type="text" id="ingredient-name" required>
+            <br>
+            <label for="ingredient-type">Typ składnika:</label>
+            <select id="ingredient-type" required>
+                <option value="rozmiar">Rozmiar</option>
+                <option value="smak">Smak</option>
+                <option value="dodatek">Dodatek</option>
+            </select>
+            <br>
+            <label for="ingredient-price">Cena:</label>
+            <input type="number" id="ingredient-price" step="0.01" required>
+            <br>
+            <button type="submit">Dodaj składnik</button>
+        </form>
+    </div>
+
+    <div id="orders" class="section">
+        <h2>Zamówienia</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Zamówienia</th>
+                    <th>Użytkownik</th>
+                    <th>Cena</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Adres</th>
+                <th>Elementy Zamówienia</th>
+                </tr>
+            </thead>
+            <tbody id="order-list"></tbody>
+        </table>
+    </div>
+
+    <script src="/_modules/admin/admin.js"></script>
+</body>
+</html>

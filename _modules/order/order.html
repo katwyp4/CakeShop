@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Podsumowanie Zamówienia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/_modules/order/order.css">
+</head>
+<body>
+    <header>
+        <h1>Podsumowanie Zamówienia</h1>
+    </header>
+    <main>
+        <div id="notification" class="notification hidden">
+            Aby złożyć zamówienie, musisz być zalogowany!
+        </div>
+        <div id="order-notification" class="notification hidden">
+            Twoje zamówienie zostało złożone pomyślnie!
+        </div>
+        
+        <div id="order-summary">
+            <h2>Twoje zamówienie:</h2>
+            <div id="summary-items">
+              
+            </div>
+            <h3>Łączna suma: <span id="summary-total">0 zł</span></h3>
+        </div>
+
+        <div id="delivery-options">
+            <h2>Opcje dostawy:</h2>
+            <form id="delivery-form">
+                <div>
+                    <input type="radio" id="pickup" name="delivery" value="pickup" checked>
+                    <label for="pickup">Odbiór osobisty</label>
+                </div>
+                <div>
+                    <input type="radio" id="address" name="delivery" value="address">
+                    <label for="address">Dostawa na adres</label>
+                </div>
+                <div id="address-fields" style="display: none;">
+                    <label for="street">Ulica:</label>
+                    <input type="text" id="street" name="street" required>
+                    <label for="city">Miasto:</label>
+                    <input type="text" id="city" name="city" required>
+                    <label for="zip">Kod pocztowy:</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+                <p><strong>Płatność:</strong> Przyjmujemy tylko płatność przy odbiorze.</p>
+                <button type="submit">Potwierdź zamówienie</button>
+            </form>
+        </div>
+    </main>
+    <script src="/_modules/order/order.js"></script>
+</body>
+</html>

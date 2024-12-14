@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    ?>
+
+    <pre>
+        <?php var_dump($_SESSION); ?>
+        </pre>
+        
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -39,16 +48,19 @@
             <i class="fas fa-phone-alt"></i> +012 345 6789
         </div>
     </div>
-
+    
 
     <nav class="navbar">
-        <a href="/" class="navbar-brand">CAKESHOP</a>
+        <a href="/" class="navbar-brand">Home</a>
         <div class="navbar-links">
-            <a href="/" class="nav-item">Home</a>
-            <a href="/about.html" class="nav-item">About Us</a>
-            <a href="/menu.html" class="nav-item">Menu & Pricing</a>
-            <a href="/_modules/login/log.html" class="nav-item">Logowanie/Rejestracja</a>
-            <a href="/contact.html" class="nav-item">Contact Us</a>
+            <a href="#cake-configuration" class="nav-item">Konfiguracja tortu</a>
+            <a href="/about.html" class="nav-item">Polecane torty</a>
+            <a href="#cake-configuration" class="nav-item">Opinie o nas</a>
+            <a href="/_modules/cart/cart.html" class="nav-item">Koszyk
+                <span id="cart-count" class="cart-count">0 </span> 
+            </a>
+             <!-- NAVIGATION_SECTION -->
+
         </div>
     </nav>
 
@@ -66,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-item" style="background-image: url('/_assets/images/logo-color.png');">
+            <div class="slide-item" style="background-image: url('/_assets/images/cake-hero.png');">
                 <div class="overlay">
                     <h1>Pyszne ciasta</h1>
                     <h2>Na każdą okazje </h2>
@@ -91,109 +103,25 @@
         </div>
     </div>
 
-
-    <div class="about-us-section">
-        <h2>About Us</h2>
-        <p>Welcome to CakeShop, where we create the finest and most delicious cakes.</p>
-        <div class="about-details">
-            <div class="about-item">
-                <i class="fas fa-heartbeat"></i>
-                <h3>100% Healthy</h3>
-            </div>
-            <div class="about-item">
-                <i class="fas fa-award"></i>
-                <h3>Award Winning</h3>
-            </div>
+    <section id="cake-configuration">
+        <div class="about-us-section">
+            <h2>About Us</h2>
+            <p>Konfiguracja tortu</p>
         </div>
-    </div>
 
- 
-    <div class="menu-section">
-        <h2>Wybierz rozmiar  tortu</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <h3>Duży tort</h3>
-                <p>205Zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>Standard tort</h3>
-                <p>100.00zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>Mini tort</h3>
-                <p>70.00zł</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="menu-section">
-        <h2>Wybierz smak</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <h3>wanilia</h3>
-                <p>205Zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>czekolada</h3>
-                <p>100.00zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>truskawkowy</h3>
-                <p>70.00zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>malinowy</h3>
-                <p>70.00zł</p>
-            </div>
-    </div>
-
-    <div class="menu-section">
-        <h2>Wybierz dodatki</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <h3>czekolada</h3>
-                <p>205Zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>owoce</h3>
-                <p>100.00zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>posypka</h3>
-                <p>70.00zł</p>
-            </div>
-            <div class="menu-item">
-                <h3>custom</h3>
-                <p>70.00zł</p>
-            </div>
-    </div>
+        <!-- Dynamiczna sekcja konfiguracji tortu -->
+        <!-- CONFIGURATION_SECTION -->
+    </section>
 
     <div class="offer-section">
-        <h2>30% Discount for This Summer</h2>
-        <a href="#" class="btn btn-primary">Order Now</a>
+        <h2>Realizacja tortów w 3 dni!</h2>
+        <a href="#" class="btn btn-primary">Zamów teraz!</a>
     </div>
     
     <div class="featured-cakes-section">
         <h2>Polecane torty</h2>
         <div class="cake-gallery">
-            <div class="cake-item">
-                <img src="/_assets/images/cake1.jpg" alt="Chocolate Cake">
-                <h3>Chocolate Delight</h3>
-                <p>Rich chocolate cake with ganache filling.</p>
-                <p class="price">$30.00</p>
-            </div>
-            <div class="cake-item">
-                <img src="/_assets/images/cake2.jpg" alt="Vanilla Cake">
-                <h3>Classic Vanilla</h3>
-                <p>Vanilla sponge with buttercream frosting.</p>
-                <p class="price">$25.00</p>
-            </div>
-            <div class="cake-item">
-                <img src="/_assets/images/cake3.jpg" alt="Red Velvet Cake">
-                <h3>Red Velvet</h3>
-                <p>Moist red velvet with cream cheese frosting.</p>
-                <p class="price">$28.00</p>
-            </div>
+            <!-- FEATURED_CAKES_SECTION -->
         </div>
     </div>
 
@@ -205,7 +133,7 @@
             <p>- Client Name</p>
         </div>
     </div>
-
+    
  
     <footer>
         <p>&copy; Your Site Name. All Rights Reserved. Designed by HTML Codex</p>

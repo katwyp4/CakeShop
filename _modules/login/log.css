@@ -40,6 +40,13 @@
     border: 1px solid #ddd;
 }
 
+.error-container {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+
 .auth-form .btn-primary {
     width: 100%;
     padding: 10px;

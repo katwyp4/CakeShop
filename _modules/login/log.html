@@ -15,6 +15,7 @@
 
         <div class="auth-form" id="login-form-container"> 
             <h3>Login</h3>
+            <div id="login-errors" class="error-container"></div> 
             <form action="log.php" method="post" id="login-form"> 
                 <label for="login-email">Email:</label>
                 <input type="email" id="login-email" name="email" required>
@@ -26,8 +27,10 @@
             </form>
         </div>
         
+        
         <div class="auth-form" id="register-form" style="display: none;">
             <h3>Register</h3>
+            <div id="register-errors" class="error-container"></div> 
             <form action="log.php" method="post">
                 <label for="register-name">Imię:</label>
                 <input type="text" id="register-name" name="name" required> 
